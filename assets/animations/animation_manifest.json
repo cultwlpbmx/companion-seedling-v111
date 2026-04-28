@@ -1,0 +1,7 @@
+{
+  "animations": {
+    "splash": "assets/animations/splash.json",
+    "success": "assets/animations/success.json",
+    "loading": "assets/animations/loading.json"
+  }
+}

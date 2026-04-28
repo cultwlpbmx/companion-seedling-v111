@@ -1,0 +1,57 @@
+name: companion_seedling
+description: 陪伴小树苗 - 家庭教育AI助手
+publish_to: 'none'
+version: 1.1.1+101
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # State Management
+  flutter_riverpod: ^2.4.9
+
+  # AI & Networking
+  http: ^1.2.0
+
+  # 本地存储
+  shared_preferences: ^2.2.3
+
+  # UI/UX
+  flutter_svg: ^2.0.9
+
+  # Utils
+  intl: ^0.18.1
+  uuid: ^4.3.1
+  timeago: ^3.6.0
+  flutter_dotenv: ^5.1.0
+
+  # Notifications (local only)
+  flutter_local_notifications: ^21.0.0
+  sqflite: ^2.4.2
+  path: ^1.9.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/config/
+    - .env
+
+  # 如需自定义字体，取消注释并补充字体文件
+  # fonts:
+  #   - family: NotoSansSC
+  #     fonts:
+  #       - asset: assets/fonts/NotoSansSC-Regular.ttf
+  #       - asset: assets/fonts/NotoSansSC-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/NotoSansSC-Bold.ttf
+  #         weight: 700

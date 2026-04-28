@@ -1,0 +1,45 @@
+{
+  "default_ai_config": {
+    "provider": "openrouter",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "model": "mistralai/mixtral-8x7b-instruct",
+    "temperature": 0.7,
+    "max_tokens": 1024,
+    "fallback_models": [
+      "openai/gpt-3.5-turbo",
+      "anthropic/claude-3-haiku"
+    ]
+  },
+  "default_reminders": [
+    {
+      "type": "dailyCheckIn",
+      "title": "今日亲子签到",
+      "message": "和孩子今天有什么愉快或挑战的瞬间吗？记录一下吧！",
+      "frequency": "daily",
+      "scheduledHour": 20,
+      "scheduledMinute": 0
+    },
+    {
+      "type": "advice",
+      "title": "今日小树苗建议",
+      "message": "基于您的家庭情况，今日建议：尝试用'我句式'代替'你句式'与孩子沟通。",
+      "frequency": "daily",
+      "scheduledHour": 9,
+      "scheduledMinute": 0
+    }
+  ],
+  "ui": {
+    "animation_duration_ms": 300,
+    "page_transition_curve": "easeInOut",
+    "default_avatar_url": null
+  },
+  "firebase": {
+    "collection_names": {
+      "users": "users",
+      "children": "children",
+      "conversations": "conversations",
+      "reminders": "reminders",
+      "sessions": "sessions"
+    }
+  }
+}

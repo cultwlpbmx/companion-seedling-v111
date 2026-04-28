@@ -1,0 +1,92 @@
+# Flutter/Dart/Pub
+build/
+.flat/
+*.class
+*.log
+*.pyc
+__pycache__/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+lib/generated_plugin_registrant.dart
+
+# Android
+*.jks
+*.keystore
+key.properties
+android/app/google-services.json
+android/.gradle/
+android/build/
+android/app/build/
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+ios/Runner.xcworkspace/xcuserdata/
+ios/Runner.xcworkspace/xcshareddata/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+.env
+.env.*
+
+# ===== 敏感部署脚本（含云凭证） =====
+deploy_aliyun.py
+deploy_fc_mongo.py
+deploy_mongo.py
+find_mongo_sku.py
+test_mongo_api.py
+test_mongo_sku.py
+test_mongo_combo.py
+try_create_mongo.py
+activate_oss.py
+deploy_info.json
+
+# ===== 敏感测试文件（含API Key/测试账号密码） =====
+test_api_quick.dart
+init_test_account_full.ps1
+register_test_account.ps1
+setup_test_account_now.ps1
+setup_test_account.ps1
+tools/diagnose.dart
+tools/fix_test_account.dart
+tools/force_register.dart
+tools/init_test_account.dart
+tools/quick_register.dart
+tools/register_test_account.dart
+
+# ===== 敏感发布文件（含签名密码） =====
+publish_assets/上架交付清单.md
+
+# ===== 其他敏感/临时文件 =====
+auto_fix_and_start.bat
+auto_fix_and_start.ps1
+full_startup.bat
+quick_start.bat
+quick_start.ps1
+setup_and_run.ps1
+analyze_output.txt
+fix_chat_screen.py
+replace_icons_v2.py
+deploy_to_github_pages.ps1
+companion_seedling.iml
+
+# ===== 阿里云凭证文件 =====
+AccessKey.csv

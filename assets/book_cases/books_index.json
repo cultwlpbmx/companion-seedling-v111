@@ -1,0 +1,45 @@
+{
+  "books_index": [
+    {
+      "id": "positive_discipline",
+      "title": "正面管教",
+      "author": "简·尼尔森",
+      "file": "positive_discipline.json",
+      "case_count": 1,
+      "tags": ["积极管教", "和善而坚定", "家庭会议"]
+    },
+    {
+      "id": "how_to_talk",
+      "title": "如何说孩子才会听，怎么听孩子才肯说",
+      "author": "阿黛尔·法伯",
+      "file": "how_to_talk.json",
+      "case_count": 1,
+      "tags": ["沟通", "倾听", "感受"]
+    },
+    {
+      "id": "pet",
+      "title": "父母效能训练 (P.E.T.)",
+      "author": "托马斯·戈登",
+      "file": "pet.json",
+      "case_count": 1,
+      "tags": ["我-信息", "积极倾听", "自主"]
+    },
+    {
+      "id": "playful_parenting",
+      "title": "游戏力养育",
+      "author": "劳伦斯·科恩",
+      "file": "playful_parenting.json",
+      "case_count": 1,
+      "tags": ["游戏", "联结", "情绪"]
+    },
+    {
+      "id": "whole_brain",
+      "title": "全脑教养法",
+      "author": "丹尼尔·西格尔",
+      "file": "whole_brain.json",
+      "case_count": 1,
+      "tags": ["大脑", "情绪", "前额叶"]
+    }
+  ],
+  "last_updated": "2026-03-11"
+}

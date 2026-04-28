@@ -1,0 +1,137 @@
+{
+  "theories": [
+    {
+      "id": "positive_discipline",
+      "title": "积极管教",
+      "summary": "通过鼓励和尊重而非惩罚来引导孩子行为，建立合作而非对抗的关系。",
+      "keyPrinciples": [
+        "相互尊重",
+        "理解行为背后的信念",
+        "关注解决方案而非惩罚",
+        "鼓励而非赞扬",
+        "犯错是学习的机会"
+      ],
+      "applicableStages": ["toddler", "childhood", "earlyTeen", "lateTeen"],
+      "applicableTraits": ["sensitive", "creative", "logical", "active"],
+      "techniques": [
+        "提供有限选择",
+        "使用'我'句式表达感受",
+        "设定合理的期望",
+        "事前约定规则",
+        "自然/逻辑后果"
+      ]
+    },
+    {
+      "id": "non_violent_communication",
+      "title": "非暴力沟通（NVC）",
+      "summary": "通过观察、感受、需要、请求四个要素，建立真诚的连接，化解冲突。",
+      "keyPrinciples": [
+        "区分观察与评判",
+        "表达真实感受而非想法",
+        "明确内在需要",
+        "提出具体、可执行的请求",
+        "同理倾听他人"
+      ],
+      "applicableStages": ["childhood", "earlyTeen", "lateTeen"],
+      "applicableTraits": ["sensitive", "logical", "creative"],
+      "techniques": [
+        "我观察到...（事实）",
+        "我感到...（感受）因为我需要/看重...（需要）",
+        "你愿意...吗？（请求）",
+        "复述对方的话以确认理解",
+        "区分请求与要求（允许对方说不）"
+      ]
+    },
+    {
+      "id": "emotion_coaching",
+      "title": "情感引导",
+      "summary": "帮助孩子识别、命名、接纳并调节情绪，培养情绪智慧。",
+      "keyPrinciples": [
+        "所有情绪都是被接纳的，但行为有界限",
+        "情绪是信号，不是问题",
+        "先联结情感，再纠正行为",
+        "情绪词汇是情绪管理的工具",
+        "父母是情绪教练"
+      ],
+      "applicableStages": ["toddler", "childhood", "earlyTeen"],
+      "applicableTraits": ["sensitive", "active", "creative"],
+      "techniques": [
+        "为情绪贴标签：'你看起来很生气'",
+        "验证感受：'换作是我也会难过'",
+        "共情蹲下，眼神平视",
+        "呼吸练习：'我们一起深呼吸'",
+        "情绪日志或情绪温度计"
+      ]
+    },
+    {
+      "id": "attachment_theory",
+      "title": "依恋理论",
+      "summary": "安全依恋是健康发展的基石。父母作为安全基地，孩子才能勇敢探索。",
+      "keyPrinciples": [
+        "敏感回应孩子需求",
+        "身体接触与情感可及性",
+        "分离与重聚的仪式感",
+        "避免恐吓或抛弃威胁",
+        "修复破裂的信任"
+      ],
+      "applicableStages": ["toddler", "childhood"],
+      "applicableTraits": ["sensitive", "creative", "active"],
+      "techniques": [
+        "积极回应哭泣或求助",
+        "有分离时告知返回时间",
+        "游戏建立联结",
+        "保持照顾者的一致性",
+        "承认错误并修复"
+      ]
+    },
+    {
+      "id": "growth_mindset",
+      "title": "成长型思维",
+      "summary": "能力可以通过努力提升。赞美过程而非天赋，培养孩子的学习韧性和抗挫力。",
+      "keyPrinciples": [
+        "大脑像肌肉，可以锻炼",
+        "失败是学习的机会",
+        "努力比天赋更重要",
+        "挑战是成长的机会",
+        "保持好奇，享受过程"
+      ],
+      "applicableStages": ["childhood", "earlyTeen", "lateTeen"],
+      "applicableTraits": ["logical", "creative", "sensitive"],
+      "techniques": [
+        "赞美具体过程：'你用了新的解题方法'",
+        "使用'还没'：'你还没掌握，继续练'",
+        "分享自己的失败经历",
+        "鼓励尝试新事物",
+        "避免固定标签：'不聪明'→'需要更多练习'"
+      ]
+    },
+    {
+      "id": "active_listening",
+      "title": "积极倾听",
+      "summary": "全神贯注、不加评判地听，复述和确认，让孩子感到被真正理解和接纳。",
+      "keyPrinciples": [
+        "放下手机，眼神接触",
+        "不打断、不建议、不评判",
+        "听内容，更听情绪",
+        "用提问帮助孩子思考",
+        "接纳沉默，给思考空间"
+      ],
+      "applicableStages": ["childhood", "earlyTeen", "lateTeen"],
+      "applicableTraits": ["sensitive", "logical", "creative"],
+      "techniques": [
+        "点头、'嗯'等非语言反馈",
+        "复述：'你的意思是...？'",
+        "情绪标注：'听起来你很委屈'",
+        "开放提问：'后来呢？'/'为什么这样想？'",
+        "不急于给建议，先让情绪流动"
+      ]
+    }
+  ],
+  "empathyPhrases": [
+    "我能感受到你现在的感受，这很正常。",
+    "作为家长，你已经做得很好了。",
+    "孩子的问题往往是成长的邀请，不是你的失败。",
+    "先照顾好自己，你才能更好地陪伴孩子。",
+    "每个孩子都有自己的节奏，我们慢慢来。"
+  ]
+}

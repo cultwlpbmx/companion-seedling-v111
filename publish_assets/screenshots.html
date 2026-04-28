@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陪伴小树苗 - 上架截图</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a2e; font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; padding: 40px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
+  
+  .screenshot {
+    width: 1080px; height: 1920px;
+    background: #F5F0EB;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+  
+  /* 手机状态栏 */
+  .status-bar {
+    height: 100px;
+    background: #F5F0EB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+  }
+  .status-bar .time { font-size: 36px; font-weight: 600; color: #2D3A2E; }
+  .status-bar .icons { display: flex; gap: 16px; font-size: 32px; color: #2D3A2E; }
+  
+  /* 标题栏 */
+  .app-bar {
+    height: 120px;
+    background: #F5F0EB;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .app-bar .avatar {
+    width: 72px; height: 72px;
+    background: #E8E2DA;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 44px;
+    margin-right: 24px;
+  }
+  .app-bar .name { font-size: 36px; font-weight: 600; color: #2D3A2E; }
+  
+  /* 菜单按钮 */
+  .menu-btn {
+    position: absolute; top: 140px; right: 40px;
+    width: 72px; height: 72px;
+    background: rgba(0,0,0,0.04);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px; color: #2D3A2E;
+  }
+  
+  /* 空状态 - 截图1 */
+  .empty-state {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    height: 1520px;
+  }
+  .empty-state .logo {
+    width: 180px; height: 180px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 20px 60px rgba(107,158,120,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 100px;
+    margin-bottom: 48px;
+  }
+  .empty-state .title { font-size: 42px; font-weight: 600; color: #2D3A2E; margin-bottom: 16px; }
+  .empty-state .subtitle { font-size: 28px; color: rgba(45,58,46,0.5); margin-bottom: 64px; }
+  .quick-topics { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 800px; }
+  .quick-topic {
+    padding: 20px 36px;
+    background: rgba(107,158,120,0.1);
+    border-radius: 40px;
+    font-size: 28px;
+    color: #6B9E78;
+    font-weight: 500;
+  }
+  
+  /* 聊天界面 - 截图2/3/4 */
+  .chat-area {
+    padding: 30px 40px;
+    height: 1520px;
+    overflow: hidden;
+  }
+  .msg { margin-bottom: 36px; display: flex; align-items: flex-start; }
+  .msg.ai { justify-content: flex-start; }
+  .msg.user { justify-content: flex-end; }
+  
+  .msg-avatar {
+    width: 68px; height: 68px;
+    background: #E8E2DA;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 38px;
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+  .msg.user .msg-avatar {
+    background: #6B9E78;
+    margin-right: 0;
+    margin-left: 20px;
+  }
+  
+  .msg-bubble {
+    max-width: 700px;
+    padding: 28px 36px;
+    border-radius: 24px;
+    font-size: 30px;
+    line-height: 1.6;
+  }
+  .msg.ai .msg-bubble {
+    background: white;
+    color: #2D3A2E;
+    border-bottom-left-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .msg.user .msg-bubble {
+    background: #6B9E78;
+    color: white;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .input-bar {
+    position: absolute;
+    bottom: 60px;
+    left: 40px; right: 40px;
+    height: 100px;
+    background: white;
+    border-radius: 50px;
+    display: flex; align-items: center;
+    padding: 0 36px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .input-bar .placeholder { font-size: 30px; color: rgba(0,0,0,0.3); flex: 1; }
+  .input-bar .send-btn {
+    width: 68px; height: 68px;
+    background: #6B9E78;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; color: white;
+  }
+  
+  /* 设置页 - 截图5 */
+  .settings-page { padding: 40px; height: 1720px; overflow: hidden; }
+  .settings-title { font-size: 40px; font-weight: 600; color: #2D3A2E; margin-bottom: 20px; }
+  .settings-section { margin-bottom: 40px; }
+  .settings-section-title { font-size: 26px; color: rgba(45,58,46,0.5); margin-bottom: 16px; padding-left: 8px; }
+  .settings-item {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin-bottom: 12px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .settings-item .label { font-size: 32px; color: #2D3A2E; display: flex; align-items: center; gap: 20px; }
+  .settings-item .icon { font-size: 36px; }
+  .settings-item .value { font-size: 28px; color: rgba(45,58,46,0.4); }
+  .settings-item .arrow { font-size: 28px; color: rgba(45,58,46,0.3); }
+  
+  .danger-item {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 36px;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 80px;
+  }
+  .danger-item .label { font-size: 32px; color: #E74C3C; }
+  
+  /* 家庭档案页 */
+  .profile-page { padding: 40px; height: 1720px; overflow: hidden; }
+  .child-card {
+    background: white;
+    border-radius: 24px;
+    padding: 36px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  }
+  .child-name { font-size: 36px; font-weight: 600; color: #2D3A2E; margin-bottom: 16px; }
+  .child-info { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+  .child-tag {
+    padding: 8px 20px;
+    background: rgba(107,158,120,0.1);
+    border-radius: 16px;
+    font-size: 24px;
+    color: #6B9E78;
+  }
+  .child-worry { font-size: 26px; color: rgba(45,58,46,0.6); line-height: 1.5; }
+  
+  .add-child-btn {
+    border: 2px dashed rgba(107,158,120,0.3);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    font-size: 32px;
+    color: #6B9E78;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 截图1：首页空状态 -->
+<div class="screenshot">
+  <div class="status-bar">
+    <span class="time">9:41</span>
+    <span class="icons">📶 📡 🔋</span>
+  </div>
+  <div class="app-bar">
+    <div class="avatar">🌱</div>
+    <span class="name">小树苗</span>
+  </div>
+  <div class="menu-btn">☰</div>
+  <div class="empty-state">
+    <div class="logo">🌱</div>
+    <div class="title">你好呀，我是小树苗 💕</div>
+    <div class="subtitle">你的家庭教育心理咨询师</div>
+    <div class="quick-topics">
+      <div class="quick-topic">孩子作业拖拉</div>
+      <div class="quick-topic">亲子沟通困难</div>
+      <div class="quick-topic">青春期叛逆</div>
+      <div class="quick-topic">情绪管理</div>
+    </div>
+  </div>
+  <div class="input-bar">
+    <span class="placeholder">想聊些什么呢...</span>
+    <div class="send-btn">↑</div>
+  </div>
+</div>
+
+<!-- 截图2：对话示例1 -->
+<div class="screenshot">
+  <div class="status-bar">
+    <span class="time">9:41</span>
+    <span class="icons">📶 📡 🔋</span>
+  </div>
+  <div class="app-bar">
+    <div class="avatar">🌱</div>
+    <span class="name">小树苗</span>
+  </div>
+  <div class="menu-btn">☰</div>
+  <div class="chat-area">
+    <div class="msg ai">
+      <div class="msg-avatar">🌱</div>
+      <div class="msg-bubble">你好呀～ 小树苗 🌱 来啦！<br><br>我是一位专业的家庭教育心理咨询师，有什么想聊的都可以跟我说。<br><br>我在这里，慢慢听 🌿</div>
+    </div>
+    <div class="msg user">
+      <div class="msg-bubble">孩子今年8岁，上二年级，写作业总是拖拉，每天要催好几遍，我都快崩溃了</div>
+      <div class="msg-avatar">我</div>
+    </div>
+    <div class="msg ai">
+      <div class="msg-avatar">🌱</div>
+      <div class="msg-bubble">💙 理解你的着急，8岁的孩子确实容易在作业上磨蹭，这通常不是故意的。<br><br>可以试试这样：<br><br>1️⃣ **把作业拆成小块**<br>每次只做15分钟，做完休息5分钟<br><br>2️⃣ **换个说法**<br>不说"快点写"，改说"我们看看今天能多快完成"<br><br>3️⃣ **完成后给个小奖励**<br>不是物质奖励，可以是一起下棋、多讲个睡前故事<br><br>孩子平时哪科作业花的时间最长？</div>
+    </div>
+    <div class="msg user">
+      <div class="msg-bubble">数学最慢，一道题要想半天</div>
+      <div class="msg-avatar">我</div>
+    </div>
+    <div class="msg ai">
+      <div class="msg-avatar">🌱</div>
+      <div class="msg-bubble">数学磨蹭通常有两个原因：<br><br>💡 **基础没掌握** —— 看到题目不知从何入手<br>💡 **怕做错** —— 反复检查，越检查越慢<br><br>可以这样试试：<br><br>**先让她做简单的**，建立信心<br>遇到难题先跳过，最后一起看<br><br>你女儿平时怕出错吗？✨</div>
+    </div>
+  </div>
+  <div class="input-bar">
+    <span class="placeholder">想聊些什么呢...</span>
+    <div class="send-btn">↑</div>
+  </div>
+</div>
+
+<!-- 截图3：对话示例2 -->
+<div class="screenshot">
+  <div class="status-bar">
+    <span class="time">9:41</span>
+    <span class="icons">📶 📡 🔋</span>
+  </div>
+  <div class="app-bar">
+    <div class="avatar">🌱</div>
+    <span class="name">小树苗</span>
+  </div>
+  <div class="menu-btn">☰</div>
+  <div class="chat-area">
+    <div class="msg ai">
+      <div class="msg-avatar">🌱</div>
+      <div class="msg-bubble">你好呀～ 小树苗 🌱 来啦！<br><br>我是一位专业的家庭教育心理咨询师，有什么想聊的都可以跟我说。<br><br>我在这里，慢慢听 🌿</div>
+    </div>
+    <div class="msg user">
+      <div class="msg-bubble">我孩子13岁，最近跟我几乎不说话，回家就关门，问什么都敷衍，我真的好焦虑</div>
+      <div class="msg-avatar">我</div>
+    </div>
+    <div class="msg ai">
+      <div class="msg-avatar">🌱</div>
+      <div class="msg-bubble">🫂 这个阶段确实很考验家长的耐心和信心。<br><br>青春期孩子关门、不说话，其实是他在**用空间保护自己**，不是在拒绝你。<br><br>几个小建议：<br><br>1️⃣ **别硬敲门**<br>给他空间，但让他知道你一直在<br>"想你了，给你切了点水果放门口了"<br><br>2️⃣ **找到他愿意开口的话题**<br>不是学习，不是成绩，而是游戏、动漫、运动...<br><br>3️⃣ **先倾听，不说教**<br>哪怕他说的话你不同意，也先听完<br><br>💡 你平时跟孩子最常聊什么话题？</div>
+    </div>
+    <div class="msg user">
+      <div class="msg-bubble">每次都是问他学习，他就不爱跟我说了</div>
+      <div class="msg-avatar">我</div>
+    </div>
+    <div class="msg ai">
+      <div class="msg-avatar">🌱</div>
+      <div class="msg-bubble">这就对了！💕<br><br>如果每次跟妈妈说话，都是被问"作业写了吗""考试怎么样"，换谁都不想聊。<br><br>**试试这个方法** 🌱<br><br>每天找一个跟学习无关的话题聊3分钟：<br>- "今天午饭吃了什么好吃的？"<br>- "最近有没有什么搞笑的事？"<br>- "那个新出的电影你看没？"<br><br>先重建**日常连接**，再谈学习的事。<br><br>孩子跟你关系好了，一切都会慢慢变好的 ✨</div>
+    </div>
+  </div>
+  <div class="input-bar">
+    <span class="placeholder">想聊些什么呢...</span>
+    <div class="send-btn">↑</div>
+  </div>
+</div>
+
+<!-- 截图4：对话示例3（情感支持） -->
+<div class="screenshot">
+  <div class="status-bar">
+    <span class="time">9:41</span>
+    <span class="icons">📶 📡 🔋</span>
+  </div>
+  <div class="app-bar">
+    <div class="avatar">🌱</div>
+    <span class="name">小树苗</span>
+  </div>
+  <div class="menu-btn">☰</div>
+  <div class="chat-area">
+    <div class="msg user">
+      <div class="msg-bubble">我真的很累，工作压力大，回家还要管孩子，老公也不帮忙，快撑不住了</div>
+      <div class="msg-avatar">我</div>
+    </div>
+    <div class="msg ai">
+      <div class="msg-avatar">🌱</div>
+      <div class="msg-bubble">🫂 听到你说"快撑不住了"，我能感受到你真的很累很累。<br><br>工作、家务、带孩子......你一个人扛了太多。<br><br>💕 我想告诉你：<br>**你已经做得很好了**<br><br>能坚持到现在，说明你比想象中更坚强。<br><br>但坚强的人也需要有人关心。<br><br>**先照顾好自己** 🌱<br>- 这周末能不能给自己放半天假？<br>- 找闺蜜出去走走、喝杯咖啡<br>- 或者就是一个人安静待一会儿<br><br>如果愿意，可以跟我说说最近发生了什么。我在这儿听着 🌿</div>
+    </div>
+    <div class="msg user">
+      <div class="msg-bubble">谢谢你，说出来好多了</div>
+      <div class="msg-avatar">我</div>
+    </div>
+    <div class="msg ai">
+      <div class="msg-avatar">🌱</div>
+      <div class="msg-bubble">💕 随时都可以来聊。<br><br>能说出来就是一种勇气，你已经在照顾自己了。<br><br>记住：<br>**照顾好自己，才能照顾好家人**<br><br>你值得被关心、被理解、被温柔对待。<br><br>我一直在这里 💙🌿</div>
+    </div>
+  </div>
+  <div class="input-bar">
+    <span class="placeholder">想聊些什么呢...</span>
+    <div class="send-btn">↑</div>
+  </div>
+</div>
+
+<!-- 截图5：家庭档案页 -->
+<div class="screenshot" style="background: #F5F0EB;">
+  <div class="status-bar">
+    <span class="time">9:41</span>
+    <span class="icons">📶 📡 🔋</span>
+  </div>
+  <div class="profile-page">
+    <div style="display: flex; align-items: center; margin-bottom: 40px;">
+      <span style="font-size: 48px; margin-right: 20px;">←</span>
+      <span style="font-size: 40px; font-weight: 600; color: #2D3A2E;">家庭档案</span>
+    </div>
+    
+    <div class="child-card">
+      <div class="child-name">🎉 旺旺</div>
+      <div class="child-info">
+        <span class="child-tag">👦 男孩</span>
+        <span class="child-tag">8岁</span>
+        <span class="child-tag">二年级</span>
+      </div>
+      <div class="child-info" style="margin-top: 16px;">
+        <span class="child-tag">性格温和</span>
+        <span class="child-tag">有点内向</span>
+      </div>
+      <div class="child-worry" style="margin-top: 20px;">
+        💭 困扰：写作业拖拉，数学比较弱
+      </div>
+    </div>
+    
+    <div class="add-child-btn">
+      <div style="font-size: 60px; margin-bottom: 12px;">+</div>
+      <div>添加孩子</div>
+    </div>
+    
+    <div style="margin-top: 48px; padding: 32px; background: rgba(107,158,120,0.08); border-radius: 20px;">
+      <div style="font-size: 28px; color: #6B9E78; font-weight: 500; margin-bottom: 12px;">💡 小贴士</div>
+      <div style="font-size: 24px; color: rgba(45,58,46,0.7); line-height: 1.6;">
+        添加孩子的信息后，小树苗会根据孩子的年龄、性格和困扰，提供更有针对性的建议。
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

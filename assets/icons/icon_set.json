@@ -1,0 +1,12 @@
+{
+  "name": "陪伴小树苗图标集",
+  "icons": {
+    "home": "🏠",
+    "chat": "💬",
+    "children": "👶",
+    "family": "👨‍👩‍👧",
+    "settings": "⚙️",
+    "login": "🔐",
+    "splash": "🌱"
+  }
+}

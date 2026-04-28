@@ -1,0 +1,8 @@
+{
+  "images": {
+    "splash_logo": "assets/images/splash_logo.png",
+    "empty_chat": "assets/images/empty_chat.png",
+    "no_children": "assets/images/no_children.png",
+    "welcome": "assets/images/welcome.png"
+  }
+}
